@@ -110,6 +110,9 @@ env_variables: dict[str, Callable[[], Any]] = {
     # Control the aclrtMemcpyBatchAsync compile path for KV cache offloading.
     # "1": force enable, "0": force disable, None: auto-detect from CANN headers.
     "VLLM_ASCEND_ENABLE_BATCH_MEMCPY": lambda: os.getenv("VLLM_ASCEND_ENABLE_BATCH_MEMCPY", None),
+    ## ailab_slm patch
+    "AILAB_SLM_LOCAL_PATH":
+    lambda: os.getenv("AILAB_SLM_LOCAL_PATH"),
 }
 
 # end-env-vars-definition
