@@ -21,3 +21,7 @@ def register_model():
             "AILabSLMMHCForCausalLM",
             "vllm_ascend.models.ailab_slm_mhc:AILabSLMMHCForCausalLM"
         )
+        ModelRegistry.register_model(
+            "AILabSLMMHCLiteForCausalLM",
+            "vllm_ascend.models.ailab_slm_mhclite:AILabSLMMHCLiteForCausalLM"
+        )
