@@ -109,3 +109,7 @@ def register_model():
             "AILabSLMForCausalLM",
             "vllm_ascend.models.ailab_slm:AILabSLMForCausalLM"
         )
+        ModelRegistry.register_model(
+            "AILabSLMMHCForCausalLM",
+            "vllm_ascend.models.ailab_slm_mhc:AILabSLMMHCForCausalLM"
+        )
