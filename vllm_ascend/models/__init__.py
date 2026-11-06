@@ -1,5 +1,7 @@
 from vllm import ModelRegistry
 
+import vllm_ascend.envs as envs_ascend
+
 
 def register_model():
     ModelRegistry.register_model(
@@ -100,3 +102,10 @@ def register_model():
     ModelRegistry.register_model(
         "LlamaForCausalLMEagle3", "vllm_ascend.models.llama_eagle3:AscendEagle3LlamaForCausalLM"
     )
+    ## ailab_slm patch
+    if envs_ascend.AILAB_SLM_LOCAL_PATH is not None:
+        from .ailab_slm import AILabSLMForCausalLM
+        ModelRegistry.register_model(
+            "AILabSLMForCausalLM",
+            "vllm_ascend.models.ailab_slm:AILabSLMForCausalLM"
+        )

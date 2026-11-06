@@ -87,6 +87,9 @@ env_variables: dict[str, Callable[[], Any]] = {
     # (safe for Ascend 910B/A3). Set to a positive value to override when
     # auto-detection is unavailable or for debugging UB overflow issues.
     "VLLM_ASCEND_ROPE_UB_SIZE_KB": lambda: int(os.getenv("VLLM_ASCEND_ROPE_UB_SIZE_KB") or 0),
+    ## ailab_slm patch
+    "AILAB_SLM_LOCAL_PATH":
+    lambda: os.getenv("AILAB_SLM_LOCAL_PATH"),
 }
 
 # end-env-vars-definition
